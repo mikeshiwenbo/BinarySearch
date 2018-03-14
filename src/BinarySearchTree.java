@@ -3,7 +3,7 @@ public class BinarySearchTree<Value> {
 	//二叉搜索树是不完全的二叉树，每一个节点有键值对，左孩子的键永远小于节点的键，右孩子的键永远小于此节点的键
 	//本算法的核心是：对于新插入的节点，首先和根节点的键比较，若小于，则再与左孩子比较，否则与右孩子比较，如此递归，直到找到一个空的节点存储此新的节点
 	//算法优点：查找、删除、插入都是log(n)
-	private class Node{
+	class Node{
 		Comparable key;
 		Value value;
 		Node left;
