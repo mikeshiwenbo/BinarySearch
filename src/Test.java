@@ -1,7 +1,9 @@
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Test {
 	public static void main(String[] args){
-		Integer[] a=new Integer[3000];
+		Integer[] a=new Integer[300];
 		//测试二分查找法
 //		for(int i=0;i<300;i++){
 //			a[i]=i;
@@ -10,8 +12,8 @@ public class Test {
 //		System.out.println(q);
 		//测试二分搜索树
 		for(int i=0;i<a.length;i++){
-			a[i]=(int)(Math.random()*60);
-//			System.out.println(a[i]);
+			a[i]=(int)(Math.random()*6);
+			System.out.println(a[i]);
 		}
 		BinarySearchTree<Integer> test=new BinarySearchTree<>();
 		for(int i=0;i<a.length;i++){
@@ -30,5 +32,10 @@ public class Test {
 		test.inOrder();
 		System.out.println("---------------------------");
 		test.postOrde();
+		System.out.println("---------------------------");
+		test.levelOrder();
+//		Queue<String> q =new LinkedList<String>();
+//		q.add("1");
+//		System.out.println(q.remove());
 	}
 }

@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinarySearchTree<Value> {
 	//二叉搜索树是不完全的二叉树，每一个节点有键值对，左孩子的键永远小于节点的键，右孩子的键永远小于此节点的键
@@ -68,7 +70,23 @@ public class BinarySearchTree<Value> {
 			System.out.println(root2.key+"   "+root2.value);
 		}
 	}
-	 
+	//广度优先遍历或叫层序遍历  。实现广度优先遍历需要借助队列，首先把根节点入队列，接着出队列，若此节点有左右孩子，将此节点的左右孩子入队列，依次进行，直到队列为空
+	public void levelOrder(){
+		levelOrder(root);
+	}
+	private void levelOrder(BinarySearchTree<Value>.Node root2) {
+		// TODO Auto-generated method stub
+		Queue<BinarySearchTree<Value>.Node> q=new LinkedList<BinarySearchTree<Value>.Node>();;
+		q.offer(root2);
+		while(!q.isEmpty()){
+			Node n=q.poll();
+			System.out.println(n.key+"   "+n.value);
+			if(n.left!=null)
+				q.add(n.left);
+			if(n.right!=null)
+				q.add(n.right);
+		}
+	}
 	private BinarySearchTree<Value>.Node search(BinarySearchTree<Value>.Node root, Comparable key) {
 		// TODO Auto-generated method stub
 		if(root==null) return null;
