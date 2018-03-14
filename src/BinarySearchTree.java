@@ -32,6 +32,43 @@ public class BinarySearchTree<Value> {
 	public BinarySearchTree<Value>.Node search(Comparable key){
 		return search(root,key);
 	}
+	//前序遍历   先访问自己，然后是左孩子，接着右孩子
+	public void preOrder(){
+		perOrder(root);
+	}
+	private void perOrder(BinarySearchTree<Value>.Node root2) {
+		// TODO Auto-generated method stub
+		if (root2!=null){
+			System.out.println(root2.key+"   "+root2.value);
+			perOrder(root2.left);
+			perOrder(root2.right);
+			}
+	}
+	//中序遍历   先访问左孩子，再访问自己，最后右孩子     打印结果是根据key从小到大进行排列的
+	public void inOrder(){
+		inOrder(root);
+	}
+	private void inOrder(BinarySearchTree<Value>.Node root2) {
+		// TODO Auto-generated method stub
+		if (root2!=null){
+			inOrder(root2.left);
+			System.out.println(root2.key+"   "+root2.value);
+			inOrder(root2.right);
+			}
+	}
+	//后序遍历    先是左孩子，接着右孩子，最后自己    作用：用于释放左右孩子
+	public void postOrde(){
+		postOrder(root);
+	}
+	private void postOrder(BinarySearchTree<Value>.Node root2) {
+		// TODO Auto-generated method stub
+		if(root2!=null){
+			postOrder(root2.left);
+			postOrder(root2.right);
+			System.out.println(root2.key+"   "+root2.value);
+		}
+	}
+	 
 	private BinarySearchTree<Value>.Node search(BinarySearchTree<Value>.Node root, Comparable key) {
 		// TODO Auto-generated method stub
 		if(root==null) return null;

@@ -1,7 +1,7 @@
 
 public class Test {
 	public static void main(String[] args){
-		Integer[] a=new Integer[30];
+		Integer[] a=new Integer[3000];
 		//测试二分查找法
 //		for(int i=0;i<300;i++){
 //			a[i]=i;
@@ -10,7 +10,8 @@ public class Test {
 //		System.out.println(q);
 		//测试二分搜索树
 		for(int i=0;i<a.length;i++){
-			a[i]=(int)(Math.random()*6);
+			a[i]=(int)(Math.random()*60);
+//			System.out.println(a[i]);
 		}
 		BinarySearchTree<Integer> test=new BinarySearchTree<>();
 		for(int i=0;i<a.length;i++){
@@ -20,8 +21,14 @@ public class Test {
 				test.insert(a[i], i);
 			}
 		}
-		for(int i=0;i<a.length;i++){
-			System.out.println(test.search(a[i]).key+"   "+test.search(a[i]).value);
-		}
+//		for(int i=0;i<a.length;i++){
+//			System.out.println(test.search(a[i]).key+"   "+test.search(a[i]).value);
+//		}
+		System.out.println("---------------------------");
+		test.preOrder();
+		System.out.println("---------------------------");
+		test.inOrder();
+		System.out.println("---------------------------");
+		test.postOrde();
 	}
 }
