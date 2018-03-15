@@ -13,7 +13,7 @@ public class Test {
 		//²âÊÔ¶ş·ÖËÑË÷Ê÷
 		for(int i=0;i<a.length;i++){
 			a[i]=(int)(Math.random()*6);
-			System.out.println(a[i]);
+//			System.out.println(a[i]);
 		}
 		BinarySearchTree<Integer> test=new BinarySearchTree<>();
 		for(int i=0;i<a.length;i++){
@@ -26,16 +26,21 @@ public class Test {
 //		for(int i=0;i<a.length;i++){
 //			System.out.println(test.search(a[i]).key+"   "+test.search(a[i]).value);
 //		}
+//		System.out.println("---------------------------");
+//		test.preOrder();
+//		System.out.println("---------------------------");
+//		test.inOrder();
+//		System.out.println("---------------------------");
+//		test.postOrde();
+//		System.out.println("---------------------------");
+		test.levelOrder();
 		System.out.println("---------------------------");
-		test.preOrder();
-		System.out.println("---------------------------");
-		test.inOrder();
-		System.out.println("---------------------------");
-		test.postOrde();
+		test.removeMax();
 		System.out.println("---------------------------");
 		test.levelOrder();
-//		Queue<String> q =new LinkedList<String>();
-//		q.add("1");
-//		System.out.println(q.remove());
+		System.out.println("---------------------------");
+		test.removeMin();
+		System.out.println("---------------------------");
+		test.levelOrder();
 	}
 }
