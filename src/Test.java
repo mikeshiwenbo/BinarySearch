@@ -35,11 +35,14 @@ public class Test {
 //		System.out.println("---------------------------");
 		test.levelOrder();
 		System.out.println("---------------------------");
-		test.removeMax();
-		System.out.println("---------------------------");
-		test.levelOrder();
-		System.out.println("---------------------------");
-		test.removeMin();
+//		test.removeMax();
+//		System.out.println("---------------------------");
+//		test.levelOrder();
+//		System.out.println("---------------------------");
+//		test.removeMin();
+//		System.out.println("---------------------------");
+//		test.levelOrder();
+		test.remove(3);
 		System.out.println("---------------------------");
 		test.levelOrder();
 	}

@@ -160,7 +160,7 @@ public class BinarySearchTree<Value> {
 			count--;
 			return rightNode;
 		}
-		root2.left=removeMin(root2.left);
+		root2.left=removeMin(root2.left);  //这是注意点，最后返回的是root2，并不是root2的左孩子
 		return root2; //层层迭代后，返回的是根节点
 	}
 /************************************************************************/
@@ -172,16 +172,55 @@ public class BinarySearchTree<Value> {
 		// TODO Auto-generated method stub
 		if(root2.right==null){
 			Node leftNode=root2.left;
+			count--;
 			return leftNode;
 		}
 		root2.right=removeMax(root2.right);
 		return root2;
 	}
-/************************************************************************/	
+/************************************************************************/
+	//删除任意值
+	public void remove(Comparable key){
+		root=remove(root,key);
+	}
+	private BinarySearchTree<Value>.Node remove(BinarySearchTree<Value>.Node root2, Comparable key) {
+		// TODO Auto-generated method stub
+		if(root2==null)
+			return null;
+		else if(key.compareTo(root2.key)<0){
+			root2.left=remove(root2.left, key);
+			return root2;
+		}else if(key.compareTo(root2.key)>0){
+			root2.right=remove(root2.right, key);
+			return root2;
+		}else{
+			if(root2.left==null){
+				Node rightNode=root2.right;
+				root2=null;
+				count--;
+				return rightNode;
+			}
+			if(root2.right==null){
+				Node leftNode=root2.left;
+				root2=null;
+				count--;
+				return leftNode;
+			}
+			Node successor=new Node(minimum(root2.right).key,minimum(root2.right).value);
+			successor.right=removeMin(root2.right);
+			count++;
+			successor.left=root2.left;
+			root2=null;
+			count--;
+			
+			return successor;
+		}
+	}
 /************************************************************************/
 /************************************************************************/
 /************************************************************************/
 /************************************************************************/
+
 
 
 
